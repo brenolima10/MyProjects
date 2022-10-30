@@ -1,0 +1,75 @@
+Cadastro
+
+Eu adicionei a função setlocale(LC_ALL, "Portuguese"); para modificar o idioma de entrada do programa pro português.
+
+Em seguida declarei um ponteiro do tipo FILE para informar o programa que eu estou fazendo a manipulação de um arquivo.
+
+Declarei as variáveis que serão utilizadas na função.
+
+FILE *ponteiro;
+
+char nome[50], email[50], senha[50], data[10], c;
+int cpf, numero, i;
+
+E fiz a atribuição da função fopen para o ponteiro *p, passando por parâmetro o nome do arquivo e o tipo de operação que
+desejo realizar, neste caso, estou realizando uma operação de adição de novos dados no final de um arquivo.
+
+ponteiro = fopen("Dados_Clientes.txt", "a");
+
+"a" = operação de adição de novos dados no final de um arquivo.
+
+Em seguida eu recebo os dados digitados pelo usuário e armazeno no arquivo utilizando a função "fprintf", passando por paramêtro o ponteiro, o tipo da informação que desejo armazenar, e o nome da variável.
+
+fprintf(ponteiro, "%s", nome da variavel);
+
+Por fim, eu fecho o arquivo para finalizar as alterações realizadas.
+
+fclose(ponteiro);
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Verificar
+
+A função de verificar recebe por parâmetro uma string digitado pelo usuário, neste caso, ela irá receber o email que o usuário informou.
+
+Em seguida eu fiz a mesma declaração de um ponteiro do tipo FILE para informar ao programa que estou manipulando um arquivo.
+
+E declarei as variáveis que serão utilizadas na função.
+
+FILE *p;
+
+char str[30], dados_do_arquivo[30], x, y;
+int i, c;
+
+E novamente fiz a atribuição da função fopen para o ponteiro *p, passando por parâmetro o nome do arquivo e o tipo de operação que desejo realizar, neste caso, estou realizando a operação de ler os dados armazenados no arquivo.
+
+ponteiro = fopen("Dados_Clientes.txt", "r");
+
+"r" = ler dados armazenados no arquivo.
+
+Após atribuir e informar o tipo de operação que desejo realizar, eu faço uma verificação para ver se o arquivo foi lido corretamente.
+
+if(ponteiro == NULL);
+
+Se o arquivo for lido sem nenhum problema.
+
+Inicio um laço de repetição com a função fscanf que lê os dados armazenados no arquivo e salva em uma variavel, neste caso ela ira salvar na varivael "v_comp",. 
+
+Esse laço irá se repetir até chegar no final do arquivo(EOF = End of File).
+
+Após armazenar os dados na variavel v_comp eu utilizo a função strstr, passando por parâmetro o email que o usuário digitou e a variavel que armazenou os dados.
+
+if (strstr(v_comp, email) != NULL)
+{
+x++;
+}
+
+strstr = procura uma string em um string maior.
+
+Procura o email dentro da variável v_comp.
+
+Se a função retornar um valor diferente de NULL, significa que encontrou o dado(email).
+
+Por fim, realizo as funções restantes.
